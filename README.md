@@ -80,4 +80,4 @@ gantt
     section Final
     Finalisation & préparation soutenance       :g1, after f1, 2d
 
-'''
+```
