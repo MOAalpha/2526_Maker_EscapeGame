@@ -1,3 +1,4 @@
+Projet de GHERRAS M.A., dans le cadre de l'option MAKER 2526.
 # **<u>EscapeGame</u>**
 
 Ceci est un projet personnel. L'objectif est de créer une boîte avec différentes énigmes, en mettant en oeuvre différentes compétences apprises, entre la Conception Assistée par Ordinateur (CAO) jusqu'à la fabrication d'un PCB.
