@@ -48,12 +48,13 @@ Parmi les 3 personnages, un seul cache le remède. Vous aurez leur témoignage p
 | Jeudi 9 avril 2026      |  Possibilité de rajouter des énigmes si tout fonctionne. / Création chatbot pour l'énigme des personnages si le temps le permet.            |
 | Lundi 13 avril 2026     |   A voir            |
 
+GANTT : (*IA MADE, for visual*)
 
 ```mermaid
-GANTT : (*IA MADE*)
-=======
-GANTT : (*IA MADE, for visual*)
-```mermaid
+
+
+
+
 
 
 gantt
