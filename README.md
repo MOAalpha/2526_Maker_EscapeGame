@@ -1,3 +1,4 @@
+Projet de GHERRAS M.A., dans le cadre de l'option MAKER 2526.
 # **<u>EscapeGame</u>**
 
 Ceci est un projet personnel. L'objectif est de créer une boîte avec différentes énigmes, en mettant en oeuvre différentes compétences apprises, entre la Conception Assistée par Ordinateur (CAO) jusqu'à la fabrication d'un PCB.
@@ -24,7 +25,8 @@ Parmi les 3 personnages, un seul cache le remède. Vous aurez leur témoignage p
 > - Actionneurs pour portes ? 
 > - PLA pour les personnages
 > - tissu pour les vêtements
-> - Capteurs RFID miniatures ?
+> - ~Capteurs RFID miniatures ?~
+> - [Capteurs magnétiques, reed switchs](https://www.amazon.fr/Gebildet-interrupteurs-Plastique-Contact-Aimant/dp/B07Z4RR4QV/ref=sr_1_6?dib=eyJ2IjoiMSJ9.kGH2TBV2svDam5SUsecZEp0ydWFLr87Lerqu3hkDXa-I73LrAi6tJurhBRlbuaOspJMU1R2bbn2FAA0ulAMiDROJe-FI64w4Tjx_S1jUe9Khu_sLVSmTS067nG6PzxzhEe5ynbjlwu14H0lsywINTnsO49MUYXsK2D6I_bHxoZ03CqrzpxEMnH7ZNclkzauLTkVpxc65eaC75tjzrhDfIBqrKW-iIr1qnzNfiRqiW8g6QUxy09GzQAjlkQqSTfp91xtdCeA01pv9tRQlohX_FAPPxJ8mOdgauN9amGSbQV0.4Op6Iyob0iHGZqmOrZvQicO9HlkG0YgwPn08NIkEwyQ&dib_tag=se&keywords=reed%2Bswitch&qid=1771235277&sr=8-6&th=1)
 > - *A suivre...*
 
 ## Planning prévisionnel 
@@ -46,8 +48,13 @@ Parmi les 3 personnages, un seul cache le remède. Vous aurez leur témoignage p
 | Jeudi 9 avril 2026      |  Possibilité de rajouter des énigmes si tout fonctionne. / Création chatbot pour l'énigme des personnages si le temps le permet.            |
 | Lundi 13 avril 2026     |   A voir            |
 
+
 ```mermaid
 GANTT : (*IA MADE*)
+=======
+GANTT : (*IA MADE, for visual*)
+```mermaid
+
 
 gantt
     title Planning du projet (février – avril 2026)
@@ -80,4 +87,8 @@ gantt
     section Final
     Finalisation & préparation soutenance       :g1, after f1, 2d
 
-    '''
+
+
+
+```
+
