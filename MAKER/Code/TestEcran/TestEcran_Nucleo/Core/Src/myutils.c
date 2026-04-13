@@ -8,6 +8,7 @@
 #include "myutils.h"
 #include "ili9341.h"
 #include "fonts.h"
+#include <stdio.h>
 
 volatile uint8_t start_game_flag = 0;
 extern RNG_HandleTypeDef hrng;
@@ -38,9 +39,10 @@ void start_story(void) {
     HAL_Delay(3000);
 
     // 5. Instruction pour commencer
-    ILI9341_WriteString(60, 200, "> APPUYEZ SUR START <", Font_11x18, ILI9341_GREEN, ILI9341_BLACK);
+    ILI9341_WriteString(30, 200, "> APPUYEZ SUR START <", Font_11x18, ILI9341_GREEN, ILI9341_BLACK);
 
     uint32_t last_msg_time = HAL_GetTick(); // On mémorise l'heure actuelle
+    uint32_t test =0;
 
         while(start_game_flag == 0) {
             uint32_t current_time = HAL_GetTick();
@@ -49,15 +51,22 @@ void start_story(void) {
             if (current_time - last_msg_time > 1000) {
                 uint32_t monNombre;
                 if (1) {
-                	//(HAL_RNG_GenerateRandomNumber(&hrng, &monNombre) == HAL_OK)
+                	char msg_buffer[50]; // Un tableau pour stocker le texte converti
+
+                	if (HAL_RNG_GenerateRandomNumber(&hrng, &test) == HAL_OK) {
+                	    // On transforme le nombre en texte (format %lu pour un uint32_t)
+                	    sprintf(msg_buffer, "Plus de %lu M morts ! Depeche-toi !!!!", test%999);
+
+                	  }
+
                     // On efface l'ancien texte (en dessinant un rectangle noir) avant d'écrire le nouveau
                     ILI9341_FillRectangle(0, 190, 320, 30, ILI9341_BLACK);
 
                     switch(monNombre % 4) {
-                        case 0: ILI9341_WriteString(60, 200, "Vite ! Des gens meurent !", Font_7x10, ILI9341_YELLOW, ILI9341_BLACK); break;
-                        case 1: ILI9341_WriteString(60, 200, "+200M de morts ! ACCELERE !", Font_7x10, ILI9341_CYAN, ILI9341_BLACK); break;
-                        case 2: ILI9341_WriteString(60, 200, "Le monde compte sur toi...", Font_7x10, ILI9341_GREEN, ILI9341_BLACK); break;
-                        case 3 : ILI9341_WriteString(60, 200, "> APPUYEZ SUR START <", Font_11x18, ILI9341_GREEN, ILI9341_BLACK); break;
+                        case 0: ILI9341_WriteString(30, 200, "Vite ! Des gens meurent !", Font_7x10, ILI9341_YELLOW, ILI9341_BLACK); break;
+                        case 1: ILI9341_WriteString(30, 200, msg_buffer, Font_7x10, ILI9341_CYAN, ILI9341_BLACK); break;
+                        case 2: ILI9341_WriteString(30, 200, "Le monde compte sur toi...", Font_7x10, ILI9341_GREEN, ILI9341_BLACK); break;
+                        case 3 : ILI9341_WriteString(30, 200, "> APPUYEZ SUR START <", Font_11x18, ILI9341_GREEN, ILI9341_BLACK); break;
                     }
                 }
                 monNombre++;
