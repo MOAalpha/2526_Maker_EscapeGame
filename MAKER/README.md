@@ -17,5 +17,11 @@
 >   - Choix de l'écran : [Affichage LCD TFT Couleur Tactile de 3,2 po.](https://www.amazon.fr/Module-daffichage-Tactile-Support-Fonction/dp/B07PKB691V?th=1)
 >   - Recherche code Ecran : [Electrocodeur](https://youtu.be/JoLnnLlXwX0)
 
-
+> ...
+> **Semaine XX : Death time**
+> - Impressions des personnages pour la 2e énigme
+> - Découpe de la boîte, avec une petite gravure
+> - Conception PCB, puis soudure au four
+> - Soudure ratée (pâtes soudées entre elles, plus manque d'une lipo Simple)
+> - Test avec Nucleo pour l'écran et 2 TTP (fonctionne bien)
 
