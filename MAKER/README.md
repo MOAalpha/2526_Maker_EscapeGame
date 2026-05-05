@@ -1,3 +1,7 @@
+RQ : Remplacement des cartes RFID (16 capteurs) par des touch sensors TTP223 (9)
+
+
+
 > *« Ici seront contées les aventures de ce projet. »*
 
 > - **Liste de matériel** :\
