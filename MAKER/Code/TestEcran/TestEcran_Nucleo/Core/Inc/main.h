@@ -74,10 +74,16 @@ void Error_Handler(void);
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define TTP_1_Pin GPIO_PIN_15
+#define TTP_1_GPIO_Port GPIOA
+#define TTP_1_EXTI_IRQn EXTI15_10_IRQn
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
 #define LCD_CS_Pin GPIO_PIN_6
 #define LCD_CS_GPIO_Port GPIOB
+#define TTP_0_Pin GPIO_PIN_8
+#define TTP_0_GPIO_Port GPIOB
+#define TTP_0_EXTI_IRQn EXTI9_5_IRQn
 
 /* USER CODE BEGIN Private defines */
 

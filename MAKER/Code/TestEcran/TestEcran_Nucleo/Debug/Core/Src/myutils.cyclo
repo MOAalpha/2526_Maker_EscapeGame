@@ -1,1 +1,4 @@
-../Core/Src/myutils.c:16:6:start_story	8
+../Core/Src/myutils.c:22:6:start_story	8
+../Core/Src/myutils.c:93:6:damier	8
+../Core/Src/myutils.c:190:6:bad_end_story	1
+../Core/Src/myutils.c:196:6:good_end_story	1

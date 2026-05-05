@@ -50,6 +50,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 extern volatile uint8_t start_game_flag;
+extern volatile uint8_t touche_TTP;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -334,6 +335,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LCD_RES_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : TTP_1_Pin */
+  GPIO_InitStruct.Pin = TTP_1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(TTP_1_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : LCD_CS_Pin */
   GPIO_InitStruct.Pin = LCD_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -341,7 +348,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LCD_CS_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : TTP_0_Pin */
+  GPIO_InitStruct.Pin = TTP_0_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(TTP_0_GPIO_Port, &GPIO_InitStruct);
+
   /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
@@ -371,6 +387,38 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         last_interrupt_time = interrupt_time;
 
     }
+    if(GPIO_Pin == TTP_0_Pin){
+    	 // Ton code ici (ex: changer une variable d'état pour passer à l'étape suivante)
+    	        // ATTENTION : Ne mets JAMAIS de HAL_Delay() ou de fonctions d'écriture LCD longues ici !
+
+    	        static uint32_t last_interrupt_time = 0;
+    	        uint32_t interrupt_time = HAL_GetTick();
+
+    	        // Anti-rebond (Debounce) logiciel simple : 200ms
+    	        if (interrupt_time - last_interrupt_time > 200)
+    	        {
+    	            // Action à faire, par exemple :
+    	            touche_TTP = 1;
+    	        }
+    	        last_interrupt_time = interrupt_time;
+    }
+    if(GPIO_Pin == TTP_1_Pin){
+        	 // Ton code ici (ex: changer une variable d'état pour passer à l'étape suivante)
+        	        // ATTENTION : Ne mets JAMAIS de HAL_Delay() ou de fonctions d'écriture LCD longues ici !
+
+        	        static uint32_t last_interrupt_time = 0;
+        	        uint32_t interrupt_time = HAL_GetTick();
+
+        	        // Anti-rebond (Debounce) logiciel simple : 200ms
+        	        if (interrupt_time - last_interrupt_time > 200)
+        	        {
+        	            // Action à faire, par exemple :
+        	            touche_TTP = 2;
+        	        }
+        	        last_interrupt_time = interrupt_time;
+        }
+
+
 }
 
 /* USER CODE END 4 */
